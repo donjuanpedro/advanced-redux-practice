@@ -23,6 +23,6 @@ function messages(state = [], action) {
 
 const rootReducer = combineReducers({
     newComments, newTasks, newOrders, tickets, messages
-})
+});
 
 export default rootReducer;
