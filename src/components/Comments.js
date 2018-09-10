@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import {connect} from 'react-redux';
 
 function Comments(props) {
     let commentDivs = props.comments.map(commen => {
@@ -7,6 +8,19 @@ function Comments(props) {
     });
     return <div>{commentDivs}</div>;
 }
+
+
+function mapStateToProps(state){
+    return{
+      commments:state.comments
+    }
+   }
+   
+   const CommentsContainer= connect(mapStateToProps)(Comments);
+   export default CommentsContainer;
+
+   
+
 Comments.propTypes = {
     comments: PropTypes.array.isRequired
 };
@@ -40,4 +54,3 @@ Comments.propTypes = {
 //     </div>);
 // }
 
-export default Comments;
